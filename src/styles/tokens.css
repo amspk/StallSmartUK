@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Color tokens — "charcoal grill + citrus marker" */
+  --ink: #241902;
+  --char: #2b2420;
+  --cream: #fbf3e3;
+  --cream-dim: #f1e5cc;
+  --paper: #fffaf0;
+  --ember: #d8531c;
+  --ember-dark: #a83e12;
+  --citrus: #f2a900;
+  --basil: #3c7a4f;
+  --basil-dark: #2a5837;
+  --rust-line: #c9b89a;
+  --danger: #b8302f;
+  --danger-bg: #fbe7e3;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --font-display: 'Archivo Black', 'Space Grotesk', sans-serif;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --shadow-ticket: 0 1px 0 rgba(36,25,2,0.04), 0 8px 20px -10px rgba(36,25,2,0.25);
+  --shadow-pop: 0 12px 32px -12px rgba(36,25,2,0.35);
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--citrus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+a { color: inherit; }
+
+/* Punched-ticket edge motif used on order cards/receipts */
+.ticket-edge {
+  position: relative;
+}
+.ticket-edge::before,
+.ticket-edge::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: var(--cream);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ticket-edge::before { left: -8px; }
+.ticket-edge::after { right: -8px; }
